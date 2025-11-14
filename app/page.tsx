@@ -1,8 +1,14 @@
 'use client'
 
+import { useEffect } from "react"
 import Image from "next/image";
+import posthog from 'posthog-js'
 
 export default function Home() {
+  useEffect(() => {
+    posthog.capture('home_page_loaded')
+  }, [])
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
@@ -37,7 +43,12 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <p>fsdfsdf</p>
+          <button
+            onClick={() => posthog.capture('my event', { property: 'value' })}
+            className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer"
+          >
+            Click me to send a event to posthog
+          </button>
         </div>
       </main>
     </div>
