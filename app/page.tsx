@@ -1,7 +1,6 @@
 'use client'
 
 import Image from "next/image";
-import posthog from 'posthog-js'
 
 export default function Home() {
   return (
@@ -38,11 +37,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <button 
-            className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer"
-            onClick={() => posthog.capture('home_page_button_clicked', { property: 'value' })}>
-              Click me to send a event to posthog
-          </button>
+          <p>fsdfsdf</p>
         </div>
       </main>
     </div>
