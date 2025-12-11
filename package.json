@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
-    "next": "16.0.3",
+    "next": "16.0.7",
     "posthog-js": "^1.292.0",
     "posthog-node": "^5.11.2",
     "react": "19.2.0",
